@@ -1,38 +1,44 @@
-.App {
-  text-align: center;
+body {
+  background-color: #e5eafd; /* Background color */
+  color: white; /* Text color */
+  overflow: hidden; /* Prevent overflow of bubbles */
+  position: relative; /* Relative positioning for pseudo-elements */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bubbles::before,
+.bubbles::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: transparent;
+  z-index: -1;
+  border-radius: 50%;
+  animation: bubbleAnimation 20s linear infinite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.bubbles::before {
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent bubbles */
+  animation-delay: 0s;
+}
+
+.bubbles::after {
+  background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent bubbles */
+  animation-delay: 10s; /* Delayed animation start for variation */
+}
+
+@keyframes bubbleAnimation {
+  0% {
+    transform: translate(0, 0) scale(1);
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  50% {
+    transform: translate(50%, 50%) scale(1.5);
+    opacity: 1;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translate(100%, 100%) scale(2);
+    opacity: 0;
   }
 }

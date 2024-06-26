@@ -1,0 +1,155 @@
+/* homepage.css */
+
+
+.homepage-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #282a36; /* Dark terminal background */
+  font-size: 18px;
+  color: #f8f8f2; /* Light text */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.homepage-container:hover {
+  background-color: #1e1f29; /* Darken the background on hover */
+}
+
+
+.editor-pane {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 20px;
+}
+
+.editor-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #44475a; /* Darker terminal background */
+  padding: 10px;
+}
+
+.editor-controls {
+  display: flex;
+}
+
+.editor-control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+.editor-control.close {
+  background-color: #ff5c57; /* Red */
+}
+
+.editor-control.minimize {
+  background-color: #f2b035; /* Yellow */
+}
+
+.editor-control.maximize {
+  background-color: #50fa7b; /* Green */
+}
+
+.editor-content {
+  flex: 1;
+  display: flex;
+}
+
+.terminal {
+  flex: 1;
+  background-color: #44475a; /* Darker terminal background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.terminal-control {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 5px;
+  background-color: #f8f8f2; /* Light terminal text */
+}
+
+.terminal-body {
+  font-size: 1.2rem;
+}
+
+.terminal-text {
+  line-height: 1.6;
+}
+
+#title {
+  font-size: 2.5rem;
+  color: #bd93f9; /* Title color */
+  margin-bottom: 10px;
+}
+
+.introduction {
+  color: #f8f8f2; /* Light text */
+  line-height: 1.4;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  position: relative; /* Ensure positioning context for pseudo-elements */
+}
+
+.profile-picture {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+  border: 2px solid #bd93f9; /* Purple border */
+}
+
+.profile-container:hover .profile-picture {
+  transform: scale(1.1); /* Enlarge the profile picture on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+}
+
+.profile-container::before,
+.profile-container::after {
+  content: '';
+  position: absolute;
+  width: calc(100% + 10px); /* Adjust the width to include the border width */
+  height: calc(100% + 10px); /* Adjust the height to include the border width */
+  border: 2px solid #bd93f9; /* Border color */
+  border-radius: 50%;
+  opacity: 1; /* Default opacity */
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Ensure the border doesn't interfere with hover */
+}
+
+.profile-container::before {
+  top: -5px; /* Adjust to overlap with the profile picture */
+  left: -5px; /* Adjust to overlap with the profile picture */
+}
+
+.profile-container::after {
+  bottom: -5px; /* Adjust to overlap with the profile picture */
+  right: -5px; /* Adjust to overlap with the profile picture */
+  opacity: 0; /* Initially hide the border */
+}
+
+.profile-container:hover::before,
+.profile-container:hover::after {
+  opacity: 0; /* Hide the border on hover */
+}

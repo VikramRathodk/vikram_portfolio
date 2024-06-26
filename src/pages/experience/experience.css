@@ -1,0 +1,156 @@
+.experience-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #201f29; /* Terminal background */
+  padding: 20px;
+  overflow: hidden; /* Ensure container does not overflow */
+}
+
+.terminal {
+  background-color: #201f29; /* Terminal background */
+  color: #f8f8f2; /* Light text */
+  width: 100%;
+  max-width: 800px;
+  min-height: 800px;
+
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  animation: terminalFadeIn 1s ease-in-out;
+}
+
+@keyframes terminalFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px;
+  background-color: #282a36; /* Dark header background */
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.circle.red {
+  background-color: #ff5555; /* Red close button */
+}
+
+.circle.yellow {
+  background-color: #f1fa8c; /* Yellow minimize button */
+}
+
+.circle.green {
+  background-color: #50fa7b; /* Green expand button */
+}
+
+.circle:hover {
+  background-color: #bd93f9; /* Hover effect for buttons */
+}
+
+.terminal-body {
+  padding: 20px;
+  max-height: 700px; /* Limit terminal body height for scroll */
+  overflow-y: auto; /* Enable vertical scroll */
+}
+
+.experience-list {
+  padding-left: 20px;
+  border-left: 2px solid #6272a4; /* Terminal command border color */
+}
+
+.experience-item {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #44475a; /* Separator between items */
+}
+
+.experience-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #bd93f9; /* Label color */
+  margin-bottom: 5px;
+}
+
+.experience-description {
+  margin-bottom: 10px;
+  color: #f8f8f2; /* Light text */
+}
+
+.experience-duration {
+  color: #6272a4; /* Duration color */
+}
+
+.cli-prompt {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.cli-user {
+  color: #ff79c6; /* CLI user text color */
+}
+
+.cli-input {
+  display: inline-block;
+  outline: none;
+  min-width: 200px;
+  padding: 6px 12px;
+  margin-left: 8px;
+  background-color: #6272a4; /* Input background */
+  color: #f8f8f2; /* Light text */
+  border: none;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  line-height: 1.4;
+  cursor: text;
+}
+
+.cli-input:focus {
+  background-color: #44475a; /* Focused input background */
+}
+
+.cli-suggestions {
+  margin-top: 8px;
+}
+
+.suggestion {
+  display: inline-block;
+  margin-right: 12px;
+  padding: 4px 8px;
+  background-color: #bd93f9; /* Suggestion background */
+  color: #282a36; /* Dark text */
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.suggestion:hover {
+  background-color: #ff79c6; /* Hover effect for suggestions */
+}
+
+.cli-feedback {
+  margin-top: 12px;
+}
+
+.error-message {
+  color: #ff5555; /* Error message color */
+  font-size: 0.9rem;
+}
