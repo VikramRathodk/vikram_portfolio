@@ -2,7 +2,6 @@ import React from "react";
 import MonacoEditor from "react-monaco-editor";
 import "./homepage.css";
 import ImageUrl from "../assets/profile_pic_.png";
-import BackgroundScene from "./background_scene"; // Adjust the path as per your file structure
 
 export default function Homepage() {
   const editorOptions = {
